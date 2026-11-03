@@ -3,9 +3,9 @@ const products = [
   { id: 2, title: 'Монитор 27"',       category: 'Компьютеры', price: 28000 },
   { id: 3, title: 'Клавиатура',        category: 'Аксессуары', price: 6500 },
   { id: 4, title: 'Мышь беспроводная', category: 'Аксессуары', price: 2500 },
-  { id: 2, title: 'Монитор 27"',       category: 'Компьютеры', price: 28000 },
-  { id: 3, title: 'Клавиатура',        category: 'Аксессуары', price: 6500 },
-  { id: 4, title: 'Мышь беспроводная', category: 'Аксессуары', price: 2500 }
+  { id: 5, title: 'Монитор 27"',       category: 'Компьютеры', price: 28000 },
+  { id: 6, title: 'Клавиатура',        category: 'Аксессуары', price: 6500 },
+  { id: 7, title: 'Мышь беспроводная', category: 'Аксессуары', price: 2500 }
 ];
 
 const catalog = document.getElementById('catalog');
@@ -17,6 +17,10 @@ btn.addEventListener('click', ()=>{
     console.log('privet')
 })
  */
+
+
+
+/* ТЕСТ */
 function renderProducts() {
   catalog.innerHTML = products.map(p => `
     <div class="card">
