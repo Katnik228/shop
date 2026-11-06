@@ -38,3 +38,32 @@ catalog.addEventListener('click', e => {
 });
 
 renderProducts();
+const clearCartBtn = document.getElementById("clear-cart-btn");
+clearCartBtn.addEventListener("click", () => {
+  cart.length = 0;
+  renderCart();
+});
+const cartItemsContainer = document.getElementById("cart-items");
+function renderCart() {
+  cartCount.textContent = cart.length;
+  cartSum.textContent = cart
+    .reduce((sum, p) => sum + Number(p.price), 0)
+    .toLocaleString('ru-RU');
+if (cart.length === 0){
+const cartItemsContainerinnerHTML = '<p class = empty-cart">Корзина пуста</p>';
+return;
+}
+  cartItemsContainer.innerHTML = cart
+  .map (
+    (item) => `  
+    <div class = "cart-item">
+    <span> ${item.title} (${item.category})</span>
+    <strong> ${Number(item.price).toLocaleString('ru-RU')} ₽ </strong>
+    </div>
+    `
+  )
+  .join("");
+}
+
+
+
